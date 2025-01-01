@@ -15,7 +15,7 @@ export default function Home() {
       {/* {loading ? (
       <PropagateLoader color={"#64FFDA"} size={30} css={override} />
     ) : (
-     
+
     )} */}
       <>
         <div onClick={()=>{appCLick()}}>
