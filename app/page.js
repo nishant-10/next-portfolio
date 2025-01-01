@@ -8,7 +8,6 @@ export default function Home() {
     // let element = document.getElementById("hamMenu");
     // let element2 = document.getElementById("app2");
     // var t = ReactDOM.findDOMNode(element);
-
     // t.style.transform = "TranslateX(100%)";
   };
   return (
