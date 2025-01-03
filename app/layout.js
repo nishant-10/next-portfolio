@@ -1,4 +1,13 @@
 import "./globals.css";
+export const metadata = {
+  title: "Nishant Joshi - Portfolio & Projects",
+  description:
+    "Sharing my journey, insights, and project in the field of software engineering.",
+  icons: {
+    icon: "/icons8-n-100.png", // Path to your favicon or logo
+    // apple: "/apple-touch-icon.png", // Optional, for Apple devices
+  },
+};
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="hydrated">
