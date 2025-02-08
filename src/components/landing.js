@@ -1,5 +1,5 @@
-'use client'
-import React, { useState, useEffect } from "react";
+// 'use client'
+// import React, { useState, useEffect } from "react";
 import "../css/landing.css";
 import Hero from "./hero";
 import Navbar from "./navbar";
@@ -14,7 +14,7 @@ import { DataContextProvider } from "../contexts/data_context";
 import { EmojiReactions } from "./Reactions";
 // const data = require("../data/ProjectsCard.json");
 function Landing() {
-  const [data, setCard] = useState();
+  // const [data, setCard] = useState();
   // useEffect(() => {
   //   fetch(`/data/ProjectsCard.json`)
   //     .then((res) => res.json())

@@ -1,6 +1,6 @@
 import "./globals.css";
 export const metadata = {
-  title: "Nishant Joshi - Portfolio & Projects",
+  title: "Nishant Joshi | Software Engineer | Portfolio & Projects",
   description:
     "Sharing my journey, insights, and project in the field of software engineering.",
   icons: {
