@@ -4,7 +4,7 @@ export const metadata = {
   description:
     "Sharing my journey, interests, and projects in software engineering, covering insights, innovations, and hands-on experiences.",
   icons: {
-    icon: "/icons8-n-100.png", // Path to your favicon or logo
+    icon: "icons8-n-100.png", // Path to your favicon or logo
     // apple: "/apple-touch-icon.png", // Optional, for Apple devices
   },
 };
