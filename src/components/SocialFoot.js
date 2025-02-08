@@ -83,7 +83,7 @@ function SocialFoot() {
           </li>
         </ul>
       </div>
-      <div className="socialFootText"><div>Made by nishant with <span style={{color:"red"}}>❤</span></div><div>Last updated on May 2024</div></div>
+      <div className="socialFootText"><div>Made by nishant with <span style={{color:"red"}}>❤</span></div><div>Last updated on February 2025</div></div>
     </>
   );
 }
