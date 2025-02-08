@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 export const metadata = {
   title: "Nishant Joshi | Software Engineer | Portfolio & Projects",
   description:
