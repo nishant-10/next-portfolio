@@ -16,9 +16,9 @@ export default function RootLayout({ children }) {
         <video autoPlay muted loop id="video-background">
           <source src="/bg.mp4" type="video/mp4" />
         </video>
-        <Analytics/>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         {children}
+        <Analytics/>
       </body>
     </html>
   );
