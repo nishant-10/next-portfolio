@@ -49,7 +49,7 @@ function Navbar() {
             </a>
           </li>
           <li>
-            <a href="#cardArea">
+            <a href="#aboutSkillList">
               <p>03. </p>Projects
             </a>
           </li>
