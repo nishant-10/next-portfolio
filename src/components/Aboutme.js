@@ -39,6 +39,7 @@ function Aboutme() {
           </div>
         </div>
       </div>
+      <div id="projectScroll"></div>
     </div>
   );
 }
