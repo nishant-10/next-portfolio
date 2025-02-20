@@ -33,6 +33,7 @@ function Hero() {
             </h5>
             <button
               className="gitbutton"
+              id="gitbutton"
               onClick={(e) => {
                 e.preventDefault();
                 window.open(

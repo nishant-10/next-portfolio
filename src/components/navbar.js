@@ -44,13 +44,13 @@ function Navbar() {
             </a>
           </li>
           <li>
-            <a href="#cardArea">
-              <p>02. </p>Projects
+            <a href="#gitbutton">
+              <p>02. </p> Experience
             </a>
           </li>
           <li>
-            <a href="#aboutContainer">
-              <p>03. </p> Experience
+            <a href="#cardArea">
+              <p>03. </p>Projects
             </a>
           </li>
           <li>
@@ -85,13 +85,13 @@ function Navbar() {
               </a>
             </li>
             <li>
-              <a href="#cardArea">
-                <p>02. </p>Projects
+              <a href="#gitbutton">
+                <p>02. </p> Experience
               </a>
             </li>
             <li>
-              <a href="#aboutContainer">
-                <p>03. </p> Experience
+              <a href="#cardArea">
+                <p>03. </p>Projects
               </a>
             </li>
             <li>
