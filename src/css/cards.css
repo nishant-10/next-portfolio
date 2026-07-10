@@ -19,8 +19,16 @@
   color: #64ffda;
 }
 
-.cardContent:hover {
+.cardContent {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
+}
+
+.projectGitLink {
+  color: #fff;
+  display: inline-flex;
 }
 
 .singleCard * {
@@ -64,6 +72,7 @@
   color: #ccd6f6;
   font-weight: bold;
   font-size: large;
+  margin: 0;
 }
 
 .projectSubtitle {
@@ -78,6 +87,9 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   /* text-shadow:
     0 0 7px #ffffff32,
     0 0 10px #ffffff61,

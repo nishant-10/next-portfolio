@@ -1,47 +1,48 @@
-import React from "react";
+import Image from "next/image";
 import "../css/aboutme.css";
-// import photo from "../img/compress3.jpg";
-import { useData } from "../contexts/data_context";
+import homeContent from "../data/home_content.json";
 
-function Aboutme() {
-  const { homepage_data } = useData();
+export default function Aboutme() {
+  const { AllText } = homeContent;
+
   return (
-    <div className="aboutContainer" id="aboutContainer">
-      <h1 className="aboutTitle" id="aboutTitle">
-        <p className="aboutTitleNumber" id="aboutTitleNumber">01. </p>
-        <p className="aboutTitleText" id="aboutTitleText">About Me</p>
-        <p className="aboutLine" id="aboutLine">――――――――――――――――――――――</p>
-      </h1>
-      <div className="aboutBody" id="aboutBody">
-        <div className="aboutGrid" id="aboutGrid">
-          <div className="aboutContent" id="aboutContent">
-            <p className="aboutPara" id="aboutParaOne">{homepage_data.AllText.AboutParaOne}</p>
-            <p className="aboutPara" id="aboutParaTwo">{homepage_data.AllText.AboutParaTwo}</p>
-            <p className="aboutPara" id="aboutParaThree">{homepage_data.AllText.AboutParaThree}</p>
-            <p className="aboutPara" id="aboutParaSkillsIntro">
-              Here are a few technologies I’ve been working with recently:
+    <section className="aboutContainer" id="about">
+      <h2 className="aboutTitle">
+        <span className="aboutTitleNumber">01. </span>
+        <span className="aboutTitleText">About Me</span>
+        <span className="aboutLine" aria-hidden="true">
+          ――――――――――――――――――――――
+        </span>
+      </h2>
+      <div className="aboutBody">
+        <div className="aboutGrid">
+          <div className="aboutContent">
+            <p className="aboutPara">{AllText.AboutParaOne}</p>
+            <p className="aboutPara">{AllText.AboutParaTwo}</p>
+            <p className="aboutPara">{AllText.AboutParaThree}</p>
+            <p className="aboutPara">
+              Here are a few technologies I&rsquo;ve been working with recently:
             </p>
-            <div className="aboutSkills" id="aboutSkills">
-              <ul className="aboutSkillul" id="aboutSkillList">
-                {homepage_data.AllText.AboutSkills.map((item, index) => {
-                  return (
-                    <li className="skillLi" key={index} id={`skillLi-${index}`}>
-                      {item}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+            <ul className="aboutSkillul">
+              {AllText.AboutSkills.map((item) => (
+                <li className="skillLi" key={item}>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="aboutPhoto" id="aboutPhoto">
-            <img className="myimage" src='/compress3.jpg' id="aboutPhotoImg" alt="My Profile" />
-            <div className="afterSquare" id="afterSquare" />
+          <div className="aboutPhoto">
+            <Image
+              className="myimage"
+              src="/compress3.jpg"
+              alt="Nishant Joshi"
+              width={250}
+              height={250}
+            />
+            <div className="afterSquare" aria-hidden="true" />
           </div>
         </div>
       </div>
-      <div id="projectScroll"></div>
-    </div>
+    </section>
   );
 }
-
-export default Aboutme;

@@ -1,57 +1,43 @@
-'use client'
-import React, { useState } from "react";
+"use client";
+import { useState } from "react";
 import "../css/projectcards.css";
 import Cards from "./Cards";
-import { useData } from "../contexts/data_context";
-// const data = require("../../public/data/ProjectsCard.json");
-const data = [];
-function ProjectCards() {
-  const { homepage_data } = useData()
-  const [visible, setVisible] = useState(3);
+import homeContent from "../data/home_content.json";
 
-  const [allCardsShown, setallCardsShown] = useState(false);
-  const morecards = () => {
-    let element = document.getElementById("showMoreButt");
+const STEP = 3;
 
-    if (visible < homepage_data.projects.length) {
-      element.innerText = "SHOW MORE";
-      setVisible((prevValue) => prevValue + 3);
-    }
-    if (visible >= homepage_data.projects.length - 3) {
-      if (allCardsShown) {
-        element.innerText = "SHOW MORE";
-        setallCardsShown(false);
-        setVisible(3);
-      }
-      if (!allCardsShown) {
-        setallCardsShown(true);
-        element.innerText = "SHOW LESS";
-        setVisible((prevValue) => prevValue + 3);
-      }
-    }
+export default function ProjectCards() {
+  const projects = homeContent.projects ?? [];
+  const [visible, setVisible] = useState(STEP);
+
+  const allShown = visible >= projects.length;
+
+  const toggle = () => {
+    setVisible(allShown ? STEP : Math.min(visible + STEP, projects.length));
   };
+
   return (
-    <>
-      <div className="cardArea" id="cardArea">
-        <h1 className="cah1 cardAreaTitle">02. Noteworthy Projects</h1>
-        <h1 className="cah1 cardAreaSubTitle">Personal & Academic</h1>
-        <h1 className="cah1 cardAreaInfo">
-          Click on card for a demo and Git icon for repository
-        </h1>
-        <div className="cards">
-          <Cards visiblecards={visible} data={homepage_data} />
-        </div>
+    <section className="cardArea" id="projects">
+      <h2 className="cah1 cardAreaTitle">02. Noteworthy Projects</h2>
+      <p className="cah1 cardAreaSubTitle">Personal &amp; Academic</p>
+      <p className="cah1 cardAreaInfo">
+        Click a card for a demo, or the GitHub icon for the repository.
+      </p>
+      <div className="cards">
+        <Cards projects={projects.slice(0, visible)} />
+      </div>
+      {projects.length > STEP && (
         <div className="showMoreButtonArea">
           <button
-            id="showMoreButt"
+            type="button"
             className="showMoreButt"
-            onClick={morecards}
+            onClick={toggle}
+            aria-expanded={allShown}
           >
-            SHOW MORE
+            {allShown ? "SHOW LESS" : "SHOW MORE"}
           </button>
         </div>
-      </div>
-    </>
+      )}
+    </section>
   );
 }
-export default ProjectCards;

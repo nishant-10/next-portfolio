@@ -1,27 +1,26 @@
-'use client'
-import Landing from "@/src/components/landing";
-import '../src/css/App.css'
-import ReactDOM from "react-dom";
+import "@/src/css/landing.css";
+import Navbar from "@/src/components/navbar";
+import Social from "@/src/components/social";
+import SocialTwo from "@/src/components/socialTwo";
+import Hero from "@/src/components/hero";
+import Aboutme from "@/src/components/Aboutme";
+import ProjectCards from "@/src/components/ProjectCards";
+import SayHello from "@/src/components/SayHello";
+import SocialFoot from "@/src/components/SocialFoot";
+
 export default function Home() {
-  const appCLick = () => {
-    // return;
-    // let element = document.getElementById("hamMenu");
-    // let element2 = document.getElementById("app2");
-    // var t = ReactDOM.findDOMNode(element);
-    // t.style.transform = "TranslateX(100%)";
-  };
   return (
     <div className="App">
-      {/* {loading ? (
-      <PropagateLoader color={"#64FFDA"} size={30} css={override} />
-    ) : (
-
-    )} */}
-      <>
-        <div onClick={()=>{appCLick()}}>
-          <Landing />
-        </div>
-      </>
+      <Navbar />
+      <Social />
+      <SocialTwo />
+      <main className="app2">
+        <Hero />
+        <Aboutme />
+        <ProjectCards />
+        <SayHello />
+      </main>
+      <SocialFoot />
     </div>
   );
 }

@@ -1,60 +1,39 @@
-import React from "react";
 import "../css/hero.css";
-import { useData } from "../contexts/data_context";
-function Hero() {
-  const { homepage_data } = useData();
+import homeContent from "../data/home_content.json";
+
+export default function Hero() {
+  const { AllText, Socials } = homeContent;
+
   return (
-    <>
-      <div className="heroSection" id="heroSection">
-        <div className="herotext">
-          <p>Hi, my name is </p>
-          <h1
-            className="name neonText"
-            onClick={() => {
-              window.open(`${homepage_data.Socials.LinkedIn ?? "#"}`);
-            }}
+    <section className="heroSection" id="hero">
+      <div className="herotext">
+        <p className="heroIntro">Hi, my name is</p>
+        <h1 className="name neonText">
+          <a
+            href={Socials.LinkedIn || "#"}
+            target="_blank"
+            rel="noreferrer noopener"
           >
             &lt; Nishant Joshi /&gt;
-          </h1>
-          <h1 className="built">I build things on web.</h1>
-          <span>
-            <h5 className="desc">
-              {homepage_data.AllText.heroDescription}
-              <span
-                style={{
-                  display: "inline",
-                  color: "#64ffda",
-                  fontWeight: "bold",
-                }}
-              >
-                &nbsp;{homepage_data.AllText.heroDescriptionKeyword}
-              </span>
-              .
-            </h5>
-            <button
-              className="gitbutton"
-              id="gitbutton"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open(
-                  "https://www.linkedin.com/in/nishant-joshi-831a8715b/",
-                  "_blank"
-                );
-              }}
-            >
-              Checkout my LinkedIn for more !
-            </button>
+          </a>
+        </h1>
+        <h2 className="built">I build things on the web.</h2>
+        <p className="desc">
+          {AllText.heroDescription}
+          <span className="descKeyword">
+            &nbsp;{AllText.heroDescriptionKeyword}
           </span>
-        </div>
+          .
+        </p>
+        <a
+          className="gitbutton"
+          href={Socials.LinkedIn || "#"}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Check out my LinkedIn for more!
+        </a>
       </div>
-      {/* <div className="lnk">
-        <ul>
-          <li>
-            <a href="#">nishantjoshi863@gmail.com</a>
-          </li>
-        </ul>
-      </div> */}
-    </>
+    </section>
   );
 }
-export default Hero;

@@ -1,144 +1,93 @@
-import React, { useState, useEffect, useRef } from "react";
-import "../App.css";
+"use client";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import "../css/nav.css";
-import { useData } from "../contexts/data_context";
+import homeContent from "../data/home_content.json";
 
-let status = false;
+const NAV_LINKS = [
+  { num: "01", label: "About", href: "#about" },
+  { num: "02", label: "Projects", href: "#projects" },
+  { num: "03", label: "Contact", href: "#contact" },
+];
 
-function Navbar() {
-  let { homepage_data } = useData();
-  const [isHamClicked, hamClick] = useState(false);
-  const box = useRef(null);
-  const hamMenuRef = useRef(null); // Ref for hamMenu
-  const appCoverRef = useRef(null); // Ref for appCover element
+export default function Navbar() {
+  const { Socials } = homeContent;
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
-  useOutsideAlerter(box, hamMenuRef, appCoverRef);
+  // Close the mobile menu with the Escape key.
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
 
-  const changeStyles = () => {
-    if (hamMenuRef.current && appCoverRef.current) {
-      const t = hamMenuRef.current;
+  const closeMenu = () => setMenuOpen(false);
 
-      if (!isHamClicked || !status) {
-        t.style.transform = "TranslateX(0)";
-        t.style.zIndex = "20";
-        appCoverRef.current.classList.add("blur"); // Add the blur class
-        hamClick(true);
-        status = true;
-      } else if (isHamClicked || status) {
-        t.style.transform = "TranslateX(100%)";
-        appCoverRef.current.classList.remove("blur"); // Remove the blur class
-        hamClick(false);
-        status = false;
-      }
-    }
-  };
+  const renderLinks = (onNavigate) => (
+    <ul>
+      {NAV_LINKS.map((link) => (
+        <li key={link.href}>
+          <a href={link.href} onClick={onNavigate}>
+            <span className="navNum">{link.num}.</span> {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a
+          className="resumebutton"
+          href={Socials.Resume}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Resume
+        </a>
+      </li>
+    </ul>
+  );
 
   return (
-    <>
-      <nav className="nav">
-        <img src={"../icons8-n-100.png"} alt="" srcSet="" />
-        <ul>
-          <li>
-            <a href="#heroSection">
-              <p>01. </p> Home
-            </a>
-          </li>
-          <li>
-            <a href="#gitbutton">
-              <p>02. </p> Experience
-            </a>
-          </li>
-          <li>
-            <a href="#aboutSkillList">
-              <p>03. </p>Projects
-            </a>
-          </li>
-          <li>
-            <a href="#showMoreButt">
-              <p>04. </p>Contact
-            </a>
-          </li>
-          <li>
-            <a
-              className="resumebutton"
-              href={homepage_data.Socials.Resume}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Resume
-            </a>
-          </li>
-        </ul>
+    <header>
+      <nav className="nav" aria-label="Primary">
+        <a href="#hero" className="navLogo" aria-label="Nishant Joshi — home">
+          <Image
+            src="/icons8-n-100.png"
+            alt="Nishant Joshi logo"
+            width={100}
+            height={100}
+            priority
+          />
+        </a>
+        {renderLinks()}
       </nav>
-      <div ref={box}>
-        <div className="hamburger" onClick={changeStyles}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
 
-        <div id="hamMenu" className="hamMenu" ref={hamMenuRef}>
-          <ul>
-            <li>
-              <a href="#heroSection">
-                <p>01. </p> Home
-              </a>
-            </li>
-            <li>
-              <a href="#gitbutton">
-                <p>02. </p> Experience
-              </a>
-            </li>
-            <li>
-              <a href="#projectScroll">
-                <p>03. </p>Projects
-              </a>
-            </li>
-            <li>
-              <a href="#showMoreButt">
-                <p>04. </p>Contact
-              </a>
-            </li>
-            <li>
-              <a
-                className="resumebutton"
-                href={homepage_data.Socials.Resume}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Resume
-              </a>
-            </li>
-          </ul>
-        </div>
+      <button
+        type="button"
+        className={`hamburger${menuOpen ? " hamburger--open" : ""}`}
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={menuOpen}
+        aria-controls="hamMenu"
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {menuOpen && (
+        <div className="navOverlay" aria-hidden="true" onClick={closeMenu} />
+      )}
+
+      <div
+        id="hamMenu"
+        ref={menuRef}
+        className={`hamMenu${menuOpen ? " hamMenu--open" : ""}`}
+      >
+        {renderLinks(closeMenu)}
       </div>
-      <div id="appCover" ref={appCoverRef}></div> {/* Add ref for appCover */}
-    </>
+    </header>
   );
-}
-
-export default Navbar;
-
-function useOutsideAlerter(ref, hamMenuRef, appCoverRef) {
-  useEffect(() => {
-    // Function for click event
-    function handleOutsideClick(event) {
-      if (
-        ref.current &&
-        !ref.current.contains(event.target) &&
-        status &&
-        hamMenuRef.current &&
-        appCoverRef.current
-      ) {
-        const t = hamMenuRef.current;
-        t.style.transform = "TranslateX(100%)";
-        appCoverRef.current.classList.remove("blur"); // Remove blur when clicked outside
-        status = false;
-      }
-    }
-
-    // Adding click event listener
-    document.addEventListener("click", handleOutsideClick);
-    return () => document.removeEventListener("click", handleOutsideClick);
-  }, [ref, hamMenuRef, appCoverRef]);
 }

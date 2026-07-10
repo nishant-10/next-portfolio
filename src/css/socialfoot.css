@@ -15,18 +15,22 @@
 
 .socialFootIconCommon {
   color: #7d87a4;
-  height: 9%;
-  width: 9%;
+  height: 28px;
+  width: 28px;
 }
 
 .socialFootText {
   text-align: center;
   font-size: 0.8rem;
-  color:
-    #7d87a4;
+  color: #7d87a4;
+  padding-bottom: 1rem;
 }
 
-.sayHelloTitleArea p{
+.heart {
+  color: red;
+}
+
+.sayHelloTitleArea span {
   display: inline;
 }
 
@@ -51,8 +55,8 @@
 
   .socialFootIconCommon {
     color: #7d87a4;
-    height: 9%;
-    width: 9%;
+    height: 28px;
+    width: 28px;
   }
 
   .socialFootText {
