@@ -34,7 +34,7 @@ export default function SocialFoot() {
         <div>
           Made by Nishant with <span className="heart">❤</span>
         </div>
-        <div>Last updated on February 2025</div>
+        <div>Last updated on July 2026</div>
       </div>
     </footer>
   );
