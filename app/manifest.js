@@ -1,6 +1,6 @@
 export default function manifest() {
   return {
-    name: "Nishant Joshi — Software Engineer & Web Developer",
+    name: "Nishant Joshi - Software Engineer & Web Developer",
     short_name: "Nishant Joshi",
     description:
       "Personal portfolio of Nishant Joshi, a Software Engineer specializing in web development.",

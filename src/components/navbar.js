@@ -52,7 +52,7 @@ export default function Navbar() {
   return (
     <header>
       <nav className="nav" aria-label="Primary">
-        <a href="#hero" className="navLogo" aria-label="Nishant Joshi — home">
+        <a href="#hero" className="navLogo" aria-label="Nishant Joshi - home">
           <Image
             src="/icons8-n-100.png"
             alt="Nishant Joshi logo"

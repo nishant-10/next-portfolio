@@ -3,12 +3,12 @@ import { Analytics } from "@vercel/analytics/react";
 
 const SITE_URL = "https://www.nishantjoshi.com";
 const DESCRIPTION =
-  "Nishant Joshi is a Software Engineer specializing in web development — Next.js, Express, Shopify, MySQL and MongoDB. Explore his projects, experience and ways to get in touch.";
+  "Nishant Joshi is a Software Engineer specializing in web development - Next.js, Express, Shopify, MySQL and MongoDB. Explore his projects, experience and ways to get in touch.";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Nishant Joshi — Software Engineer & Web Developer",
+    default: "Nishant Joshi - Software Engineer & Web Developer",
     template: "%s | Nishant Joshi",
   },
   description: DESCRIPTION,
@@ -18,8 +18,9 @@ export const metadata = {
     "Web Developer",
     "Full Stack Developer",
     "React",
-    "Next.js",
-    "Node.js",
+    "Salesforce Commerce Cloud",
+    "Next js",
+    "Node js",
     "Express",
     "Shopify",
     "MongoDB",
@@ -36,9 +37,9 @@ export const metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "Nishant Joshi",
-    title: "Nishant Joshi — Software Engineer & Web Developer",
+    title: "Nishant Joshi - Software Engineer & Web Developer",
     description:
-      "Software Engineer specializing in web development — Next.js, Express, Shopify, MySQL and MongoDB. Explore my projects and experience.",
+      "Software Engineer specializing in web development - Next.js, Express, Shopify, MySQL and MongoDB. Explore my projects and experience.",
     locale: "en_US",
     images: [
       {
@@ -51,9 +52,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nishant Joshi — Software Engineer & Web Developer",
+    title: "Nishant Joshi - Software Engineer & Web Developer",
     description:
-      "Software Engineer specializing in web development — Next.js, Express, Shopify, MySQL and MongoDB.",
+      "Software Engineer specializing in web development - Next.js, Express, Shopify, MySQL and MongoDB.",
     images: ["/compress3.jpg"],
   },
   robots: {

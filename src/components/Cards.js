@@ -13,7 +13,7 @@ export default function Cards({ projects }) {
               target="_blank"
               rel="noreferrer noopener"
               className="projectGitLink"
-              aria-label={`${project.Title} — GitHub repository`}
+              aria-label={`${project.Title} - GitHub repository`}
             >
               <GithubIcon className="cardicon feather-github" />
             </a>
