@@ -23,6 +23,19 @@
   "projects": [
     {
       "id": 1,
+      "Title": "Scroll Helper - Smart Scroll Buttons (Chrome Browser Extension)",
+      "Description": "Floating scroll buttons with support for scrolling to the top, bottom, specific text, and custom percentages with a single click.",
+      "Tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Chrome Extension"
+      ],
+      "DemoLink": "https://chromewebstore.google.com/detail/scroll-helper/hfogflammgfacegejkncmcmpjljpahde",
+      "GitLink": "https://github.com/nishant-10/scroll-helper"
+    },
+    {
+      "id": 2,
       "Title": "Cloud Based Vehicle Surveillance System",
       "Description": "Client app made in Python detects & alerts driver's drowsiness, obstacles, etc. Also uploads & display clips of these occurences on a website.",
       "Tags": [
@@ -37,7 +50,7 @@
       "GitLink": "https://github.com/nishant-10/CloudBasedVehicleSurveillance"
     },
     {
-      "id": 2,
+      "id": 3,
       "Title": "Virtual Keypad using vanilla Javascript",
       "Description": "Keypad that we use on banking websites as a security measure. Many features such as jumbling of keys after reload and tab change.",
       "Tags": [
@@ -49,7 +62,7 @@
       "GitLink": "https://github.com/nishant-10/Javascript_Virtual_Keypad"
     },
     {
-      "id": 3,
+      "id": 4,
       "Title": "Data storage (CRUD) using Ethereum Smart Contracts",
       "Description": "As a blockchain based project, a website which interacts with ethereum smart contracts to store criminal data. Thus maintaining data decentralization and itegrity ",
       "Tags": [
@@ -65,7 +78,7 @@
       "GitLink": "https://github.com/nishant-10/CriminalDataStorageEthereumWebApp"
     },
     {
-      "id": 4,
+      "id": 5,
       "Title": "Covid 19 Tracker using R Shiny",
       "Description": "As a part of Big Data syllabus, a web application to visualize covid waves in a very interactive manner.",
       "Tags": [
@@ -76,7 +89,7 @@
       "GitLink": "https://github.com/nishant-10/RShinyCovidTracker"
     },
     {
-      "id": 5,
+      "id": 6,
       "Title": "Climate Change Analysis & visualization",
       "Description": "As a part of Advanced Mining Techinques syllabus, wrote a python script to interactively visualize data using maps.",
       "Tags": [
@@ -88,7 +101,7 @@
       "GitLink": "https://github.com/nishant-10/ClimateChangeAnalysisAndVisualization"
     },
     {
-      "id": 6,
+      "id": 7,
       "Title": "Desktop app for bruteforcing social media sites",
       "Description": "App which uses combination of alphabets or dictionary to brute force attack login pages.",
       "Tags": [
