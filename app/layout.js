@@ -1,3 +1,4 @@
+import Background from "@/src/components/Background";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -118,7 +119,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="video-background">
-        <video
+        {/* <video
           id="video-background"
           autoPlay
           muted
@@ -129,7 +130,8 @@ export default function RootLayout({ children }) {
           tabIndex={-1}
         >
           <source src="/bg.mp4" type="video/mp4" />
-        </video>
+        </video> */}
+         <Background />
         <noscript>You need to enable JavaScript to view this site.</noscript>
         {children}
         <script
