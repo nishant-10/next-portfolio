@@ -12,13 +12,16 @@ export default function BuyACoffee() {
         playsInline
       />
 
-      <h2>Thank you for using Scroll Helper! ❤️</h2>
+      <h2>Thank You ❤️</h2>
 
       <p className="description">
-        If Scroll Helper has made browsing a little easier, the best way to
-        support the project is by giving it a ⭐ on GitHub. Every star helps
-        more people discover the extension and keeps me motivated to add new
-        features.
+        I truly appreciate that some of you wanted to buy me a coffee. That's
+        incredibly kind.
+        <br />
+        <br />
+        Instead, if you'd like to support Scroll Helper, leaving a ⭐ on GitHub
+        would mean a lot. It helps more people discover the extension and
+        motivates me to keep improving it.
       </p>
 
       <a
@@ -27,11 +30,11 @@ export default function BuyACoffee() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        ⭐ Star on GitHub
+        ⭐ Star Scroll Helper on GitHub
       </a>
 
       <p className="footer-text">
-        Thank you for your support! 🚀
+        Thank you for being part of the Scroll Helper community! 🚀
       </p>
     </section>
   );
