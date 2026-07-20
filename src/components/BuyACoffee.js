@@ -20,17 +20,25 @@ export default function BuyACoffee() {
         <br />
         <br />
         Instead, if you'd like to support Scroll Helper, leaving a ⭐ on GitHub
-        would mean a lot. It helps more people discover the extension and
-        motivates me to keep improving it.
+        or rating the extension would mean a lot. It helps more people discover
+        the extension and motivates me to keep improving it.
       </p>
 
       <a
-        className="github-button"
+        className="rate-button"
         href="https://github.com/nishant-10/scroll-helper"
         target="_blank"
         rel="noopener noreferrer"
       >
         ⭐ Star Scroll Helper on GitHub
+      </a>
+      <a
+        className="rate-button rate-ext-button"
+        href="https://chromewebstore.google.com/detail/scroll-helper-smart-scrol/hfogflammgfacegejkncmcmpjljpahde"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ⭐ Rate Scroll Helper on Chrome Web Store
       </a>
 
       <p className="footer-text">
